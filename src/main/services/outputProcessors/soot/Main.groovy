@@ -40,6 +40,10 @@ class Main {
                     sootRunner.setDetectionAlgorithms(configureDetectionAlgorithms(appArguments, sootWrapper))
                 }
 
+                if (appArguments.getPartialResultsOnTimeout()) {
+                    sootRunner.configurePartialResultsOnTimeout(true)
+                }
+
                 sootRunner.executeAnalyses(outputPath)
 
                 if (appArguments.isReport()) {

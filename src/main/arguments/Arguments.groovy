@@ -21,6 +21,7 @@ class Arguments {
     private String syntacticSeparators
     private String fileExtension
     private Level logLevel
+    private boolean partialResultsOnTimeout
 
     Arguments() { // set the default values for all parameters
         randomSeed = 1
@@ -37,6 +38,7 @@ class Arguments {
         syntacticSeparators = '{ } ( ) ; ,'
         fileExtension = '.java'
         logLevel = Level.INFO
+        partialResultsOnTimeout = false
     }
 
     void setRandomSeed(int randomSeed) {
@@ -166,5 +168,13 @@ class Arguments {
     void setLogLevel(Level logLevel) {
         this.logLevel = logLevel
         Configurator.setRootLevel(logLevel)
+    }
+
+    boolean isPartialResultsOnTimeout() {
+        return partialResultsOnTimeout
+    }
+
+    void setPartialResultsOnTimeout(boolean partialResultsOnTimeout) {
+        this.partialResultsOnTimeout = partialResultsOnTimeout
     }
 }
